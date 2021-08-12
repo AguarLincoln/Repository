@@ -3,9 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\User;
-use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\Contracts\BaseRepository;
 
-class UserRepositoryEloquent implements UserRepositoryInterface{
+
+class UserRepositoryEloquent extends BaseRepository{
 
     private $model;
 
@@ -27,6 +28,16 @@ class UserRepositoryEloquent implements UserRepositoryInterface{
 
 		return response()->json([
 			'msg' => 'Usúario criado com sucesso!'
+		]);
+		
+	}
+
+	public function update(array $data = []){
+		
+		$this->model->update($data);
+
+		return response()->json([
+			'msg' => 'Usúario atualizado com sucesso com sucesso!'
 		]);
 		
 	}

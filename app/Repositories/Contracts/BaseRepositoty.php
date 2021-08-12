@@ -1,11 +1,11 @@
 <?php   
 
-namespace App\Repositoryx;   
+namespace App\Repositories\Contracts;
 
 
 use Illuminate\Database\Eloquent\Model;   
 
-class BaseRepository 
+abstract class BaseRepository implements Contract
 {     
          
     protected $model;       

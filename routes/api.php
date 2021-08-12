@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','App\Http\Controllers\UserController@list');
 Route::post('/create','App\Http\Controllers\UserController@create');
+Route::post('/update','App\Http\Controllers\UserController@update');

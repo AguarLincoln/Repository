@@ -17,4 +17,9 @@ class UserController extends Controller
     {
         return $user->findAll(10);
     }
+
+    public function update(UserRepositoryEloquent $user, Request $request){
+        $data = $request->only('name', 'email', 'password');
+        return $user->update($data);
+    }
 }
