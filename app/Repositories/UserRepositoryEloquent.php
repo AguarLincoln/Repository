@@ -5,10 +5,9 @@ namespace App\Repositories;
 use App\Models\User;
 use App\Repositories\Contracts\BaseRepository;
 
-
 class UserRepositoryEloquent extends BaseRepository{
 
-    private $model;
+    protected $model;
 
 	public function __construct(User $model)
 	{
@@ -32,8 +31,8 @@ class UserRepositoryEloquent extends BaseRepository{
 		
 	}
 
-	public function update(array $data = []){
-		
+	public function update(array $data = [], int $id = 0){
+		$this->model = User::findOrFail($id);
 		$this->model->update($data);
 
 		return response()->json([
