@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Repositories\Contracts\BaseRepository;
 
@@ -16,9 +17,8 @@ class UserRepositoryEloquent extends BaseRepository{
 
     public function findAll()
 	{
-		return response()->json([
-			'data' => $this->model->paginate(10)
-		]);
+
+		return UserResource::collection($this->model->select('name','email')->paginate(10));
 	} 
 
 	public function create(array $data = []){

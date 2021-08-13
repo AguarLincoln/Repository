@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/','App\Http\Controllers\UserController@list');
-Route::post('/create','App\Http\Controllers\UserController@create');
-Route::put('/update/{id}','App\Http\Controllers\UserController@update');
+Route::get('/usuario','App\Http\Controllers\UserController@list');
+Route::post('/usuario','App\Http\Controllers\UserController@create');
+Route::put('/usuario/{id}','App\Http\Controllers\UserController@update');
